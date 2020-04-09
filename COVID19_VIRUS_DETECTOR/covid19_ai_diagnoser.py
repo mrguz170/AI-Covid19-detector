@@ -21,7 +21,7 @@ model_covid19PneumoniaDetector._make_predict_function()
 
 
 
-DIAGNOSIS_MESSAGES = [ "Pneumonia detected", "Covid19 detected", "Normal lungs detected" ]
+DIAGNOSIS_MESSAGES = [ "Pneumonia detectada", "Covid19 detectado", "Pulmones normales detectados" ]
 
 ########################### ----------REGULAR ---------------
 #Function written by Jordan to do online inference i.e. Regular Pneumonia tests
