@@ -55,7 +55,7 @@ def model_predict(img_path, model):
 
 
 def loadCovid19ImageFromName(filename):
-	DIAGNOSIS_RESULT = covid19_ai_diagnoser.doOnlineInference_covid19Pneumonia("\\uploads\\" + filename + "\\")
+	DIAGNOSIS_RESULT = covid19_ai_diagnoser.doOnlineInference_covid19Pneumonia("/uploads/" + filename + "/")
 	
 	#DIAGNOSIS_RESULT += "**Non-Covid19 Mode Result**\n" + filename+"\n\n"
 	#DIAGNOSIS_RESULT += covid19_ai_diagnoser.doOnlineInference_covid19Pneumonia("\\uploads\\" + filename + "\\")
