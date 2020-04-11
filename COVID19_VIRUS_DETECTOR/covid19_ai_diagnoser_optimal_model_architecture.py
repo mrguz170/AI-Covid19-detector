@@ -265,8 +265,8 @@ def init():
     # Creating model and compiling
     model_covid19PneumoniaDetector = Model(inputs=inputs, outputs=output)
     model_covid19PneumoniaDetector.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-    model_covid19PneumoniaDetector.load_weights(os.path.join(os.getcwd() + "\\COVID19_VIRUS_DETECTOR" 
-                            '\\covid19_neural_network_weights_jordan.hdf5'))
+    model_covid19PneumoniaDetector.load_weights(os.path.join(os.getcwd() + "/COVID19_VIRUS_DETECTOR" 
+                            '/covid19_neural_network_weights_jordan.hdf5'))
     
 
     ###################################################################
