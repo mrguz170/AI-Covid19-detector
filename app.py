@@ -9,7 +9,6 @@ import glob
 import re
 import numpy as np
 
-from PIL import Image, ImageTk
 
 # Keras
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
