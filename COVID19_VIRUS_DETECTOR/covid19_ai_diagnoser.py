@@ -56,6 +56,8 @@ def doOnlineInference_covid19Pneumonia (imagePath):
     try:
         currdir = os.getcwd()  + imagePath
         test_data = []
+
+        print("-------" + currdir)
         img = covid19_ai_diagnoser_optimal_model_architecture.cv2.imread(currdir, 0) #Replace plt.imread, with  gray scale cv2.imread(path,0), so that ui's image load process doesn't throw a pyimage10 error
 
         img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, scale) if scale != 1 else img
@@ -86,8 +88,7 @@ def doOnlineInference_covid19Pneumonia (imagePath):
             recordInferenceEvent(imagePath, outputContent)
             print("Predicho")
             return outputContent
-         
-        
+             
     except Exception as ex:
         print("ERROR: {}".format(str(ex)))
     
