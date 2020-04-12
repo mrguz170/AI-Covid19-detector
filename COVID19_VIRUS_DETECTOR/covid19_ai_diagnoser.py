@@ -53,43 +53,43 @@ def doOnlineInference_regularPneumonia (imagePath):
 ########################### ----------COVID 19 ---------------
 #Function written by Jordan to do online inference i.e. Covid19 tests
 def doOnlineInference_covid19Pneumonia (imagePath):
-    #try:
-    currdir = os.getcwd()  + imagePath
-    test_data = []
-    img = covid19_ai_diagnoser_optimal_model_architecture.cv2.imread(currdir, 0) #Replace plt.imread, with  gray scale cv2.imread(path,0), so that ui's image load process doesn't throw a pyimage10 error
+    try:
+        currdir = os.getcwd()  + imagePath
+        test_data = []
+        img = covid19_ai_diagnoser_optimal_model_architecture.cv2.imread(currdir, 0) #Replace plt.imread, with  gray scale cv2.imread(path,0), so that ui's image load process doesn't throw a pyimage10 error
 
-    img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, scale) if scale != 1 else img
-                          
-    print("--------------------")
-    print()
+        img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, scale) if scale != 1 else img
+                              
+        print("--------------------")
+        print()
 
-    img = covid19_ai_diagnoser_optimal_model_architecture.np.dstack([img, img, img])
-    img = img.astype('float32') / 255
-    test_data.append(img)
+        img = covid19_ai_diagnoser_optimal_model_architecture.np.dstack([img, img, img])
+        img = img.astype('float32') / 255
+        test_data.append(img)
 
-    
-    # on thread 1
-    #session = tf.Session(graph=model_covid19PneumoniaDetector.graph)
-    #k.set_session(session)
-    with graph.as_default():
-        covid19_ai_diagnoser_optimal_model_architecture.K.set_session(sess)
-        prediction = model_covid19PneumoniaDetector.predict(covid19_ai_diagnoser_optimal_model_architecture.np.array(test_data))
-        _prediction = round( prediction[0][0]*100, 3 )
-        if ( _prediction > 50 ):
-            _prediction = DIAGNOSIS_MESSAGES[1];
-        elif ( _prediction < 50 ):
-            _prediction = DIAGNOSIS_MESSAGES[2];  
-        outputContent = _prediction + "\n"
-        #outputContent += "Raw Neural Network Output : " + str(prediction[0][0]) + ". A value closer to 1 signifies illness, while a value closer to 0 signifies normalness.\n\n"
-        outputContent += ": " + str(prediction[0][0]) + "%"
+        
+        # on thread 1
+        #session = tf.Session(graph=model_covid19PneumoniaDetector.graph)
+        #k.set_session(session)
+        with graph.as_default():
+            covid19_ai_diagnoser_optimal_model_architecture.K.set_session(sess)
+            prediction = model_covid19PneumoniaDetector.predict(covid19_ai_diagnoser_optimal_model_architecture.np.array(test_data))
+            _prediction = round( prediction[0][0]*100, 3 )
+            if ( _prediction > 50 ):
+                _prediction = DIAGNOSIS_MESSAGES[1];
+            elif ( _prediction < 50 ):
+                _prediction = DIAGNOSIS_MESSAGES[2];  
+            outputContent = _prediction + "\n"
+            #outputContent += "Raw Neural Network Output : " + str(prediction[0][0]) + ". A value closer to 1 signifies illness, while a value closer to 0 signifies normalness.\n\n"
+            outputContent += ": " + str(prediction[0][0]) + "%"
 
-        recordInferenceEvent(imagePath, outputContent)
-        print("Predicho")
-        return outputContent
+            recordInferenceEvent(imagePath, outputContent)
+            print("Predicho")
+            return outputContent
          
         
-    #except Exception as ex:
-    #   print("ERROR: {}".format(str(ex)))
+    except Exception as ex:
+        print("ERROR: {}".format(str(ex)))
     
 
 
