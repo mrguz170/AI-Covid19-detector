@@ -9,11 +9,8 @@ import glob
 import re
 import numpy as np
 
-
 # Keras
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
-
-
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template

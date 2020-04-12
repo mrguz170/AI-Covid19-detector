@@ -1,0 +1,44 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DATE/TIME : 4 11, 2020...16:56:25
+
+IMAGE : /uploads/01E392EE-69F9-4E33-BFCE-E5C968654078.jpeg/
+
+RESULT : 
+Covid19 detectado
+: 0.9994887%
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DATE/TIME : 4 11, 2020...17:5:54
+
+IMAGE : /uploads/1-s2.0-S1684118220300682-main.pdf-003-b1.png/
+
+RESULT : 
+Pulmones normales detectados
+: 0.21113849%
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DATE/TIME : 4 11, 2020...18:1:27
+
+IMAGE : /uploads/1-s2.0-S1684118220300682-main.pdf-003-b1.png/
+
+RESULT : 
+Pulmones normales detectados
+: 0.21113849%
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DATE/TIME : 4 11, 2020...19:30:45
+
+IMAGE : /uploads/01E392EE-69F9-4E33-BFCE-E5C968654078.jpeg/
+
+RESULT : 
+Covid19 detectado
+: 0.9994887%
+
+
+

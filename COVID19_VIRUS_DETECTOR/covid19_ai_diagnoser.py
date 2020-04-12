@@ -10,14 +10,12 @@ global sess
 import os
 import numpy as np
 import tensorflow as tf
-#import keras.backend as k
-
-
-#model_pneumoniaDetector = covid19_ai_diagnoser_optimal_model_architecture.model_pneumoniaDetector
 
 #modelo de covid 19
 model_covid19PneumoniaDetector, graph, sess = covid19_ai_diagnoser_optimal_model_architecture.init()
 model_covid19PneumoniaDetector._make_predict_function()
+
+scale = (covid19_ai_diagnoser_optimal_model_architecture.img_dims, covid19_ai_diagnoser_optimal_model_architecture.img_dims)
 
 
 
@@ -60,7 +58,7 @@ def doOnlineInference_covid19Pneumonia (imagePath):
     test_data = []
     img = covid19_ai_diagnoser_optimal_model_architecture.cv2.imread(currdir, 0) #Replace plt.imread, with  gray scale cv2.imread(path,0), so that ui's image load process doesn't throw a pyimage10 error
 
-    img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, (covid19_ai_diagnoser_optimal_model_architecture.img_dims, covid19_ai_diagnoser_optimal_model_architecture.img_dims))
+    img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, scale) if scale != 1 else img
                           
     print("--------------------")
     print()
