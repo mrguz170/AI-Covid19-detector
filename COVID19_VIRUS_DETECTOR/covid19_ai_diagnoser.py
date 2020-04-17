@@ -61,10 +61,7 @@ def doOnlineInference_covid19Pneumonia (imagePath):
         img = covid19_ai_diagnoser_optimal_model_architecture.cv2.imread(currdir, 0) #Replace plt.imread, with  gray scale cv2.imread(path,0), so that ui's image load process doesn't throw a pyimage10 error
 
         img = covid19_ai_diagnoser_optimal_model_architecture.cv2.resize(img, scale) if scale != 1 else img
-                              
-        print("--------------------")
-        print()
-
+        
         img = covid19_ai_diagnoser_optimal_model_architecture.np.dstack([img, img, img])
         img = img.astype('float32') / 255
         test_data.append(img)
@@ -92,7 +89,6 @@ def doOnlineInference_covid19Pneumonia (imagePath):
     except Exception as ex:
         print("ERROR: {}".format(str(ex)))
     
-
 
 
 #Record each inference in a text file 
